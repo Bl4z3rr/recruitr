@@ -1,0 +1,14 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= simple_form_for @candidate do |f| %>
+  <%= f.input :name  %>
+  <%= f.input :surname %>
+  <%= f.input :email %>
+  <%= f.input :development_type %>
+  <%= f.input :seniority_level %>
+  <%= f.submit "create" %>
+<% end %>

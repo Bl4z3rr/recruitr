@@ -1,0 +1,8 @@
+<h1><% @positions.each do |position| %></h1>
+  <h2><%= position.id %> <%= position.name %></h2>
+  <p><%=position.description %></p>
+  <p><%=position.development_type %></p>
+  <p><%=position.seniority_level %></p>
+
+  <% end %>
+
