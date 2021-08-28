@@ -1,10 +1,12 @@
-class CreatePositionsTable < ActiveRecord::Migration[6.1]
+class CreateCandidates < ActiveRecord::Migration[6.1]
   def change
-    create_table :positions do |t|
+    create_table :candidates do |t|
       t.string :name, null: false
-      t.text :description
+      t.string :surname, null: false
+      t.string :email, null: false
       t.string :development_type, null: false
       t.string :seniority_level, null: false
+
       t.timestamps
     end
   end
