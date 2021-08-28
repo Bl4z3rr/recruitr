@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Position < ApplicationRecord
-  
   has_one :skill_set
   has_many :candidates_positions
   has_many :candidates, through: :candidates_positions
