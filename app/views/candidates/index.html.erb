@@ -1,0 +1,9 @@
+<h1><% @candidates.each do |candidate| %></h1>
+  <h2><%= candidate.id %> <%= candidate.name %></h2>
+  <p><%=candidate.surname %></p>
+  <p><%=candidate.email %></p>
+  <p><%=candidate.development_type %></p>
+  <p><%=candidate.seniority_level %></p>
+
+  <% end %>
+

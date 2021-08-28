@@ -37,6 +37,8 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'pry', '~> 0.13.1'
   gem 'rubocop-rails', require: false
+  gem 'simple_form'
+  gem 'rails-controller-testing'
 end
 
 group :development do

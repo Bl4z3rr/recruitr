@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_28_084151) do
+ActiveRecord::Schema.define(version: 2021_08_28_102147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 2021_08_28_084151) do
     t.string "seniority_level", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "position_id"
+    t.bigint "recruiter_id"
+    t.index ["position_id"], name: "index_candidates_on_position_id"
+    t.index ["recruiter_id"], name: "index_candidates_on_recruiter_id"
   end
 
   create_table "candidates_positions", id: false, force: :cascade do |t|
@@ -84,6 +88,8 @@ ActiveRecord::Schema.define(version: 2021_08_28_084151) do
     t.index ["skill_set_id"], name: "index_skills_on_skill_set_id"
   end
 
+  add_foreign_key "candidates", "positions"
+  add_foreign_key "candidates", "recruiters"
   add_foreign_key "skill_sets", "candidates"
   add_foreign_key "skill_sets", "positions"
   add_foreign_key "skill_sets", "recruiters"

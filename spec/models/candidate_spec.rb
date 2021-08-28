@@ -2,8 +2,6 @@
 
 require 'rails_helper'
 
-# frozen_string_literal: true
-
 RSpec.describe Candidate do
   it { is_expected.to have_one(:skill_set) }
   it { is_expected.to have_many(:candidates_positions) }
