@@ -19,4 +19,8 @@ RSpec.describe CreateCandidates do
     expect(Candidate).to receive(:new).and_return(an_object_having_attributes(params))
     subject
   end
+
+  it 'creates new SkillSet' do
+    expect { subject }.to change { SkillSet.where(source: ) }.from
+  end
 end

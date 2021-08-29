@@ -6,7 +6,7 @@ class CreateRecruiters < ApplicationService
   end
 
   def call
-    Recruiter.new(params)
+    Recruiter.new(params).tap(&:save)
   end
 
   private

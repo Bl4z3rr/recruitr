@@ -16,7 +16,7 @@ class RecruitersController < ApplicationController
   def create
     @recruiter = CreateRecruiters.call(set_params)
 
-    @recruiter.save ? redirect_to(recruiter_path(@recruiter)) : render(:new)
+    @recruiter ? redirect_to(recruiter_path(@recruiter)) : render(:new)
   end
 
   def set_params

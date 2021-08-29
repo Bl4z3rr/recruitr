@@ -7,7 +7,7 @@ class CreateCandidates < ApplicationService
   end
 
   def call
-    Candidate.new(params)
+    Candidate.new(params).tap(&:save)
   end
 
   private
