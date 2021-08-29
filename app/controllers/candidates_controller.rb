@@ -16,11 +16,8 @@ class CandidatesController < ApplicationController
 
   def create
     @candidate = CreateCandidates.call(set_params)
-    if @candidate.save
-      redirect_to candidate_path(@candidate)
-    else
-      render :new
-    end
+
+    @candidate.save ? redirect_to(candidate_path(@candidate)) : render(:new)
   end
 
   def set_params

@@ -16,11 +16,8 @@ class PositionsController < ApplicationController
 
   def create
     @position = CreatePositions.call(set_params)
-    if @position.save
-      redirect_to position_path(@position)
-    else
-      render :new
-    end
+
+    @position.save ? redirect_to(position_path(@position)) : render(:new)
   end
 
   def set_params

@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :recruiter do
-    name { 'Jack' }
-    surname { 'Sparrow' }
-    email { 'sparrow@mail.com' }
-    development_type { 'Backend' }
+    name { 'Danny' }
+    surname { 'Ocean' }
+    email { 'ocean@mail.com' }
+    development_type { 'Devops' }
   end
 end
