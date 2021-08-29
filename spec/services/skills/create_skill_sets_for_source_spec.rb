@@ -23,7 +23,7 @@ RSpec.describe Skills::CreateSkillSetsForSource do
     let(:source) { recruiter }
     let(:source_type) { source.class.name }
 
-    it 'creates SkillSet for Candidate' do
+    it 'creates SkillSet for Recruiter' do
       expect { subject }.to change { SkillSet.all }.from([]).to(a_collection_containing_exactly(
                                                                   an_object_having_attributes(source_id: source.id,
                                                                                               source_type: source_type)
@@ -36,7 +36,7 @@ RSpec.describe Skills::CreateSkillSetsForSource do
     let(:source) { position }
     let(:source_type) { source.class.name }
 
-    it 'creates SkillSet for Candidate' do
+    it 'creates SkillSet for Position' do
       expect { subject }.to change { SkillSet.all }.from([]).to(a_collection_containing_exactly(
                                                                   an_object_having_attributes(source_id: source.id,
                                                                                               source_type: source_type)

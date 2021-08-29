@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe CreatePositions do
-  subject { described_class.new(params).call }
+  subject { described_class.new(params: params).call }
 
   let(:params) do
     {
@@ -15,7 +15,10 @@ RSpec.describe CreatePositions do
   end
 
   it 'creates new Position' do
-    expect(Position).to receive(:new).and_return(an_object_having_attributes(params))
-    subject
+    expect { subject }.to change(Position, :count).from(0).to(1)
+  end
+
+  it 'creates new SkillSet' do
+    expect { subject }.to change { SkillSet.where(source: Position.last).count }.from(0).to(1)
   end
 end
