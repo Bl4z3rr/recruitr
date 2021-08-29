@@ -1,0 +1,8 @@
+<h1><% @recruiters.each do |recruiter| %></h1>
+  <h2><%= recruiter.id %> <%= recruiter.name %></h2>
+  <p><%=recruiter.surname %></p>
+  <p><%=recruiter.email %></p>
+  <p><%=recruiter.development_type %></p>
+
+  <% end %>
+

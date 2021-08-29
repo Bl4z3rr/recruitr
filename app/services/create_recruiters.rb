@@ -1,21 +1,15 @@
 # frozen_string_literal: true
 
-class AssignSkillsToSkillSet < ApplicationService
-
+class CreateRecruiters < ApplicationService
   def initialize(params)
     @params = params
   end
 
   def call
-    
+    Recruiter.new(params)
   end
 
   private
 
   attr_reader :params
-
-  def skills
-    params
-  end
-
 end
