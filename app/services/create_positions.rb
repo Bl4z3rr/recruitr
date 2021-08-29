@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreatePosition < ApplicationService
+class CreatePositions < ApplicationService
 
   def initialize(params)
     @params = params

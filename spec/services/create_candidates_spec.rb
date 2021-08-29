@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe CreateCandidate do
-  subject { described_class.call(params) }
+RSpec.describe CreateCandidates do
+  subject { described_class.new(params).call }
 
   let(:params) do
     {

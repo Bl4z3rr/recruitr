@@ -2,7 +2,5 @@
 
 class SkillSet < ApplicationRecord
   has_many :skills
-  belongs_to :candidate
-  belongs_to :position
-  belongs_to :recruiter
+  belongs_to :source, polymorphic: true
 end

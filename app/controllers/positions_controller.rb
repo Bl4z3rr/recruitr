@@ -15,7 +15,7 @@ class PositionsController < ApplicationController
   end
 
   def create
-    @position = CreatePosition.call(set_params)
+    @position = CreatePositions.call(set_params)
     if @position.save
       redirect_to position_path(@position)
     else
