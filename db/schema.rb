@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_28_102147) do
+ActiveRecord::Schema.define(version: 2021_08_29_083755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,14 +70,11 @@ ActiveRecord::Schema.define(version: 2021_08_28_102147) do
   end
 
   create_table "skill_sets", force: :cascade do |t|
-    t.bigint "position_id"
-    t.bigint "candidate_id"
-    t.bigint "recruiter_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["candidate_id"], name: "index_skill_sets_on_candidate_id"
-    t.index ["position_id"], name: "index_skill_sets_on_position_id"
-    t.index ["recruiter_id"], name: "index_skill_sets_on_recruiter_id"
+    t.string "source_type"
+    t.bigint "source_id"
+    t.index ["source_type", "source_id"], name: "index_skill_sets_on_source"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -90,8 +87,5 @@ ActiveRecord::Schema.define(version: 2021_08_28_102147) do
 
   add_foreign_key "candidates", "positions"
   add_foreign_key "candidates", "recruiters"
-  add_foreign_key "skill_sets", "candidates"
-  add_foreign_key "skill_sets", "positions"
-  add_foreign_key "skill_sets", "recruiters"
   add_foreign_key "skills", "skill_sets"
 end

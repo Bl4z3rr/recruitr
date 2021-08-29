@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateCandidate < ApplicationService
+class CreateCandidates < ApplicationService
 
   def initialize(params)
     @params = params
@@ -13,5 +13,4 @@ class CreateCandidate < ApplicationService
   private
 
   attr_reader :params
-
 end

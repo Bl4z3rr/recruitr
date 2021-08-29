@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Candidate < ApplicationRecord
-  has_one :skill_set
+  has_one :skill_set, as: :source
   has_many :candidates_positions
   has_many :positions, through: :candidates_positions
   has_many :candidates_recruiters

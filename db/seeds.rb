@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Skill.destroy_all
+# Skill.destroy_all
 
 skill = Skill.create(name: "Javascript")
 skill = Skill.create(name: "Python")
@@ -25,3 +25,25 @@ skill = Skill.create(name: "Scala")
 skill = Skill.create(name: "Elixir")
 skill = Skill.create(name: "HTML")
 skill = Skill.create(name: "CSS")
+
+Candidate.create!(
+                  name: 'Liam',
+                  surname:'Lama',
+                  email:'l.lama@mail.com',
+                  development_type: 'Backend',
+                  seniority_level: 'Senior'
+                  )
+
+Recruiter.create!(
+                  name: 'Liam',
+                  surname:'Lama',
+                  email:'l.lama@mail.com',
+                  development_type: 'Backend'
+                  )
+
+Position.create!(
+                  name: 'Ruby Developer',
+                  description: 'Backend ruby dev with 2 years',
+                  development_type: 'Backend',
+                  seniority_level: 'Senior'
+                  )

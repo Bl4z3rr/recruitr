@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateHrRepresentative < ApplicationService
+class CreateHrRepresentatives < ApplicationService
 
   def initialize(name:, surname:, email:)
     @name = name
